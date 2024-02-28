@@ -99,7 +99,7 @@
 <p>This is a basic implementation and may require further enhancements for production use. Ensure to configure the application with your MongoDB database URI and AWS credentials for hosting and file storage.</p>
 
 <h2>Authors</h2>
-<p>Manshi (<a href="[https://github.com/manshikumari12](https://github.com/manshikumari12)">github.com/manshi27</a>)</p>
+<p>Manshi (<a href="[https://github.com/manshikumari12](https://github.com/manshikumari12)">github.com/manshikumari12)</a>)</p>
 
 <h2>Acknowledgements</h2>
 <p>This project was developed as part of a learning exercise in web development.</p>
