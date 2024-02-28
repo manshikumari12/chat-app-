@@ -96,7 +96,7 @@
 
 <h2>Note</h2>
 
-<p>This is a basic implementation and may require further enhancements for production use. Ensure to configure the application with your MongoDB database URI and AWS credentials for hosting and file storage.</p>
+<p>This is a basic implementation and may require further enhancements for production use. Ensure to configure the application with your MongoDB database URI .</p>
 
 <h2>Authors</h2>
 <p>Manshi (<a href="https://github.com/manshikumari12">github.com/manshikumari12)</a>)</p>
