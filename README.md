@@ -1,4 +1,4 @@
-![Screenshot 2024-02-28 222357](https://github.com/manshikumari12/chat-app-/assets/119393324/afa33eab-36b0-473d-95a3-d6b6e7f0bd37)
+
 <h1>Chat-App</h1>
 
 <p>This is a simple chat application built using Socket.IO for real-time messaging. It allows users to register, login, and communicate with each other in real-time.</p>
