@@ -1,0 +1,94 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>chat app</title>
+    <link rel="stylesheet" href="./Style/index.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    
+    </head>
+
+    <body>
+        <div class="container">
+
+
+            <nav>
+                <div class="conatinernav">
+                    <div>
+                        <h1>ChatItNow</h1>
+                    </div>
+                    
+                    
+                    
+                    
+                    <div class="detailsof">
+                        <h2>Active <b id="usercount"></b></h2>
+                        <p id="enterroom"></p>
+                        <h1 class="navbar-brand"></h1>
+                        <div id="listdetails">
+                            <p id="showusername">UserName</p>
+                    
+                        </div>
+                    
+                    
+                    <div class="pop">
+                    <button id="showUserListBtn"><i class="fas fa-user"></i></button>
+                    <div class="popup" id="userListPopup">
+                        <div class="popup-content">
+                            <span class="close-btn">&times;</span>
+                            <h2>Live user details</h2>
+                            <ul id="userListdata"></ul>
+                        </div>
+                    </div>
+                    </div>
+                        
+                        <!-- <ul id="userList"></ul> -->
+                    
+                    
+                    </div>
+                </div>
+
+            </nav>
+        
+
+            <form>
+                <button class="btn btn-danger btn-sm" id="btnhandle" onclick="handlesidebar()">All active member</button>
+               
+              
+                
+           
+                <div id="userDetailsPopup" style="display: none;">
+                    <div id="userDetails"></div>
+                    <button id="closePopup">Close</button>
+                </div>
+                <div class="cont">
+
+
+                    <div class="sidebar">
+                        <ul id="userlistcontainer">
+                        
+                        </ul>
+                    </div>
+                    <div class="bg-danger" id="mainBox"></div>
+                    <div id="msgBox"></div>
+                </div>
+                <input type="text" id="inputmsg" placeholder="Enter message" />
+                <button type="submit" id="sendBtn">Send</button>
+            </form>
+        </div>
+
+
+
+        <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+            integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+            crossorigin="anonymous"></script>
+
+            <script src="./script.js"></script>
+        
+    </body>
+
+    </html>

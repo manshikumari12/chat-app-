@@ -1,0 +1,160 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat app</title>
+    <link rel="stylesheet" href="../Style/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+     
+            <h1>ChatItNow</h1>
+            <h2>Active <b id="usercount"></b></h2>
+            <p id="enterroom"></p>
+            <h1 class="navbar-brand"></h1>
+            <span>
+                <p id="showusername">UserName</p>
+                <ul id="userList"></ul>
+            </span>
+             
+        </nav>
+       
+        <form>
+        <button class="btn btn-danger btn-sm" id="btnhandle" onclick="handlesidebar()">Groups Enjoy Chat</button>
+            <div class="cont">
+               
+             
+                <div class="sidebar">
+                    <ul id="userlistcontainer"></ul>
+                </div>
+                <div class="bg-danger" id="mainBox"></div>
+                <div id="msgBox"></div>
+            </div>
+            <input type="text" id="inputmsg" placeholder="Enter message" />
+            <button type="submit" id="sendBtn">Send</button>
+        </form>
+    </div>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+        integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+        crossorigin="anonymous"></script>
+    <script>
+        let isTokenPresent = localStorage.getItem("chattoken");
+         const sidebarEl = document.querySelector('.sidebar');
+         const navbarbrand = document.querySelector('.navbar-brand');
+    let recipient = "";
+        if (!isTokenPresent) {
+            window.location.href = "./Login.html";
+        }
+
+        const socket = io("http://localhost:1211/", {
+            transports: ["websocket"],
+            query: {
+                token: isTokenPresent
+            }
+        });
+
+        socket.on("message", (msg) => {
+            console.log(msg);
+        });
+
+        socket.on("newuser", (msg) => {
+            const count_tag = document.getElementById("usercount");
+            count_tag.innerText = msg;
+        })
+   
+ function handlesidebar() {
+        if (sidebarEl.classList.contains("sidebarClosed")) {
+            sidebarEl.classList.remove("sidebarClosed");
+            for (let child of sidebarEl.children) {
+                child.style.display = 'block'; 
+            }
+        } else {
+            sidebarEl.classList.add("sidebarClosed");
+            for (let child of sidebarEl.children) {
+                child.style.display = 'none';
+            }
+        }
+    }
+
+
+    function selectRecipient(recp, name) {
+        recipient = recp;
+        const allbuttonElements = document.querySelectorAll('.users');
+        console.log(allbuttonElements)
+        allbuttonElements.forEach((button) => {
+            console.log(button)
+            button.classList.remove('btn-danger');
+        });
+
+        navbarbrand.textContent = name;
+
+        // Add btn-primary class to the clicked li element
+        const clickedLiElement = document.querySelector(`.users[data-id="${recp}"]`);
+        clickedLiElement.classList.remove('btn-light');
+        clickedLiElement.classList.add('btn-danger');
+        handlesidebar()
+        msgBox.innerHTML = '';
+    }
+
+        const form = document.querySelector('form');
+        const inputmsg = document.getElementById('inputmsg');
+        const msgBox = document.getElementById('msgBox');
+        const enterroom = document.getElementById("enterroom");
+      
+    document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const message = inputmsg.value;
+       if (message !== "" && recipient !== '') {
+            var div = document.createElement('div');
+            div.textContent = message;
+            div.classList.add('sentmsg');
+            msgBox.append(div);
+
+            const payload = {
+                sender: socket.id,
+                recipient: recipient,
+                message: message
+            };
+            console.log(payload)
+            socket.emit('message', payload);
+        
+            inputmsg.value = '';
+        } else {
+            return;
+        }
+
+    });
+
+
+    socket.on('message', (payload) => {
+        let { message } = payload;
+        var div = document.createElement('div');
+        div.textContent = message;
+        div.classList.add('receivedmsg');
+        document.getElementById('msgBox').append(div); 
+    });
+
+        
+       socket.on("userList", (list) => {
+            let htmlStr = list.map((ele) => {
+                console.log(ele.id)
+                if (ele.id !== socket.id) {
+                    return `<button class="btn btn-light my-1 users" data-id="${ele.id}" onclick="selectRecipient('${ele.id}','${ele.name}')">
+                <i class='bx bxs-user-circle' ></i>
+                <span>${ele.name}</span>
+                        </button>`
+                } else {
+                    showusername.innerText = ele.name;
+                }
+            }).join("");
+
+            userlistcontainer.innerHTML = htmlStr;
+        })
+    </script>
+</body>
+
+</html> -->

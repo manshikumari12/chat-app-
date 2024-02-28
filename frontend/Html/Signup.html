@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup page</title>
+    <link rel="stylesheet" href="../Style/signup.css">
+   
+</head>
+
+<body>
+        <div class="container">
+            <div class="cont">
+            
+                <div class="signup-container">
+                
+                    <form>
+                        <h1>Signup</h1>
+                        <input type="text" id="name" name="firstName" required placeholder="Enter your first name"><br><br>
+                        <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name"><br><br>
+                        <input type="text" id="mobileNo" name="mobileNo" required pattern="[0-9]{10}"
+                        title="Mobile number must be 10 digits" placeholder="Enter your mobile number"><br><br>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email"><br><br>
+                        <input type="text" id="street" name="street" required placeholder="Enter your street address"><br><br>
+                        <input type="text" id="city" name="city" required placeholder="Enter your city"><br><br>
+                        <input type="text" id="state" name="state" required placeholder="Enter your state"><br><br>
+                        <input type="text" id="country" name="country" required placeholder="Enter your country"><br><br>
+                        <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{6,}"
+ title="Password must be 6 characters with at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character"
+            placeholder="Enter your password"><br><br>
+
+    
+
+
+                        
+                    
+
+                        <!-- <input type="text" placeholder="Username" id="name">
+                        <input type="email" placeholder="Email" id="email">
+                        <input type="password" placeholder="Password" id="password"> -->
+                        <button type="submit" id="signupBtn">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <script src="../script/signup.js"></script>
+    </body>
+
+</html>

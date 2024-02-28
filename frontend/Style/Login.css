@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap-reverse;
+}
+
+.signup-container h1 {
+    color: white;
+    /* border-bottom: 1px solid red; */
+    margin-bottom: 30px;
+}
+
+form {
+    color: white;
+    padding: 5%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    background-color: #f8f3f30d;
+}
+
+input {
+    width: 95%;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid white;
+    font-size: 20px;
+    outline: none;
+    color: white;
+    background-color: transparent;
+}
+
+::placeholder {
+    color: #BDBDBD;
+    /* Replace with the desired color value */
+    font-size: 16px;
+}
+
+button {
+    background-color: #764ba2;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+button:hover {
+    background-color: #5c2e91;
+}
